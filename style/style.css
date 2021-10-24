@@ -1,3 +1,21 @@
 body {
   background-color: blue;
 }
+
+header {
+  width: auto;
+  height: 50px;
+  background-color: chartreuse;
+}
+
+main {
+  width: auto;
+  height: 500px;
+  background-color: dimgray;
+}
+
+footer {
+  width: auto;
+  height: 50px;
+  background-color: floralwhite;
+}
