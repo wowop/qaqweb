@@ -1,22 +1,7 @@
-body {
-	background-color: blue;
-}
+// 匯入檔案 @import
+@import "_01Joint.scss";
 
-header {
-	//寬度 高度 背景顏色
-	width: auto;
-	height: 50px;
-	background-color: chartreuse;
-}
-
-main {
-	width: auto;
-	height: 500px;
-	background-color: dimgray;
-}
-
-footer {
-	width: auto;
-	height: 50px;
-	background-color: floralwhite;
+@media screen and (max-width: 576px) {
+	//匯入檔案 @import
+	@import '_02Esmall/01index';
 }

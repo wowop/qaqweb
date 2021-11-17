@@ -1,21 +1,21 @@
 body {
-  background-color: blue;
+  background-color: antiquewhite;
 }
 
 header {
-  width: auto;
-  height: 50px;
-  background-color: chartreuse;
+  width: 300px;
+  height: 25px;
+  background-color: crimson;
 }
 
-main {
-  width: auto;
-  height: 500px;
-  background-color: dimgray;
+#main {
+  width: 600px;
+  height: 450px;
+  background-color: mediumblue;
 }
 
 footer {
-  width: auto;
-  height: 50px;
-  background-color: floralwhite;
+  width: 100px;
+  height: 350px;
+  background-color: gold;
 }
