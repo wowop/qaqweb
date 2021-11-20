@@ -15,9 +15,55 @@
     <!-- 響應試網頁 id(唯一 #)類別(class .) -->
     <!--頁首(固定)主內容(隨著標題變化)頁尾(固定)  -->
     <!-- 導覽列 -->
-    <nav></nav>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+        <nav id="nav">
+            <li id="Logo">QAQ</li>
+            <li id="Leader">排行榜</li>
+            <li id="Free">限時免費</li>
+            <li id="Activity">活動專區</li>
+            <li id="Newbook">新書推薦</li>
+            <li id="Menu">
+            <!-- 將圖片改文字輸出，樣式設定還是顯示圖；符合 SEO 用法；因為圖片可以水平置中，但無法垂直置中 -->  
+            <!-- <img src="images/icon/000001.svg" alt="選單" title="選單項目"> -->
+            </li>
+            <p class="Clear"></p>
+        </nav>
+    </header>
+    <!-- 內容 -->
+    <!-- main標籤在舊IE無法使用，使用<div>並用id標籤解決，或是用<article>。-->
+    <article id="main">
+        <article>
+            <h1>首頁</h1>
+        </article>
+        <article>
+            <h1>排行榜</h1>
+        </article>
+        <article>
+            <h1>關於我</h1>
+        </article>
+        <article>
+            <h1>限時免費</h1>
+        </article>
+        <article>
+            <h1>活動專區</h1>
+        </article>
+    </article>
+    <!-- 頁尾 -->
+    <footer>
+        <nav id="subnav">
+            <li id="Special">特別專題</li>
+            <li id="recommend">編輯推薦</li>
+            <li id="month">本月主打</li>
+        </nav>
+        <address>
+            <li>聯絡電話</li>
+            <li>電子郵件</li>
+            <li>Line ID</li>
+            <li>Instagram</li>
+        </address>
+        <h6>
+            網站版權作者所有
+        </h6>
+    </footer>
 </body>
 </html>

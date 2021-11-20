@@ -1,0 +1,36 @@
+// 呼叫html 標籤 ， 例如 : nav ， 稱作 類型選擇
+// 呼叫id ， 例如 <li id="test"></li>，id="test"，[#] ID 選擇器 ; [#test]
+// 呼叫 class ， class="test"，[.]類別選擇器 [.test1]
+// scss 巢狀寫法 2.變數 $yourname(設定計算用的基礎值) 3.繼承 %yourname(css3語法.yourname相同,但能集中呈現);呼叫方法 @extend
+//_在scss裡面作用是隱藏
+
+//傳統css3的寫法 1.按順序往下隱藏 2.同樣的樣式可以寫在一起+,
+
+
+
+footer, nav{
+	//隱藏
+	display: none;
+}
+
+ //$W10: 10%
+
+header {
+	//寬度: 100%;
+	width: $W10 * 10;;
+	nav {
+		#noritakaLogo{
+			//隱藏
+			display: none;
+		}
+		.noritakaLogo{
+			//隱藏
+			display: none;
+		}
+		.noritakaSubNav {
+			ul {
+				background-color: antiquewhite;
+			}
+		}
+	}
+}
