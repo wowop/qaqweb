@@ -3,31 +3,5 @@
 // 判斷裝置的斷點
 // 超小裝置 <576px
 @media screen and (max-width: 576px) {
-	@import '_02Esmall/01index;
-}
-
-//小裝置  >=576px
-// 目前不需要此裝置的設定，以後有需要再打開
-// @media screen and (min-width: 576px) {
-//     @import '_03Lsmall.scss';
-// }
-
-//平板裝置 >=768px
-@media screen and (min-width: 768px) {
-	@import '_04Middle/_01lindex.scss';
-}
-
-//大平板裝置 >=992px
-@media screen and (min-width: 992px) {
-	@import '_05Lmiddle/01index';
-}
-
-//螢幕裝置  >=1200px
-@media screen and (min-width: 1200px) {
-	@import '_06Screen/01index';
-}
-
-//超大螢幕裝置  >=1400px
-@media screen and (min-width: 1400px) {
-	@import '_07Lscreen/01index';
+	@import '_02Esmall/_02Esmall.scss';
 }

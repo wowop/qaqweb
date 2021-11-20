@@ -1,0 +1,88 @@
+// 呼叫html 標籤 ， 例如 : nav ， 稱作 類型選擇
+// 呼叫id ， 例如 <li id="test"></li>，id="test"，[#] ID 選擇器 ; [#test]
+// 呼叫 class ， class="test"，[.]類別選擇器 [.test1]
+// scss 巢狀寫法 2.變數 $yourname(設定計算用的基礎值) 3.繼承 %yourname(css3語法.yourname相同,但能集中呈現);呼叫方法 @extend
+//_在scss裡面作用是隱藏
+
+//傳統css3的寫法 1.按順序往下隱藏 2.同樣的樣式可以寫在一起+,
+
+header {
+	nav {
+		// Nav 的寬度變數傳回
+		width: $NW;
+		height: $NH;
+		color: white;
+		background-color: #646464(100, 100, 100);
+
+		// 指向清單物件 li
+		li {
+			// 將 Logo 與 選單 排成一列，用 float
+			// 缺點是會自動往上增加一層，如果上一層框架沒有設定高度，會被無視存在
+			// 除了增加高度，可以使用 clear:both 移除浮點
+			float: left;
+		}
+		.Clear {
+			clear: both;
+		}
+		#Logo {
+			// 寬度分成8等分
+			width: $W1 * 8 + 5%;
+			// 文字尺寸，內縮、水平置中
+			font-size: $text * 2;
+			// 內縮方法一，首行縮排 (單行文字)
+			text-indent: 30px;
+			// 文字水平置中，行距設定 (父框架的高度 = 行距的數值) line-height: 80 * 0.15 + px;
+			//方法1 父框架有高度時，父框架的高度 = 行距的數值;方法2 文字尺寸的倍數 + 3 (只限此程式中的框架)
+			line-height: $NH; // 2是上面 font-size 的倍數2
+		}
+		#Menu {
+			// 區塊分成2等分
+			width: $W1 * 1 + 5%;
+			text-align: center;
+			line-height: $NH;
+			@include BgText;
+			// 背景圖片連結
+			// background-image: url(../../images/icon/000001.svg);
+			// background-color: rgb(75, 72, 72);
+		}
+
+		// 最上面只顯示 Logo 與 Menu，其餘不顯示
+		// css3集合寫法
+		#Leader,
+		#Free,
+		#Activity,
+		#Newbook {
+			// @extend %Dn;
+			//呼叫 @mixin
+			@include DN;
+		}
+		// }
+		//     // 超出範圍設定，能滑動X軸，讓圖片在框架中左右滑動
+		//     // overflow-x: auto;
+		//     // background-color: cornflowerblue;
+		//     // ul {
+		//     //     width: $W10 * 5;
+		//     //     li {
+		//     //         width: 100vw;
+		//     //         height: $BHsmall;
+		//     //         float: left;
+		//     //     }
+		//         // .Box1 {
+		//         //     background-color: burlywood;
+		//         // }
+		//         // .Box2 {
+		//         //     background-color: goldenrod;
+		//         // }
+		//         // .Box3 {
+		//         //     background-color: darkolivegreen;
+		//         // }
+		//         // .Box4 {
+		//         //     background-color: chocolate;
+		//         // }
+		//         // .Box5 {
+		//         //     background-color: tan;
+		//         // }
+		//     }
+		// }
+	}
+}
