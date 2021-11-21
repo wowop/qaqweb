@@ -100,3 +100,13 @@ header {
 		background-color: coral;
 	}
 }
+footer {
+	nav {
+		ul {
+			width: 80%;
+			//彈性布局
+			@include flx;
+			background-color: crimson;
+		}
+	}
+}
