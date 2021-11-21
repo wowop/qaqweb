@@ -31,6 +31,7 @@ header {
 			clear: both;
 		}
 		#Logo {
+			//@include LBW(7, 5vw);
 			background-color: blue;
 			// 寬度分成8等分
 			width: $W1 * 8 + 5%;

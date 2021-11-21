@@ -1,4 +1,5 @@
 // 頁面 (瀏覽器) 與物件的間距 ; 外兼具 -- 上下為0，左右自動 ; 內間距上下左右為0 ; 設定在(*) (總管)
+//https://github.com/yin-ying
 $W10: 100%; //100%的值
 
 * {
@@ -58,3 +59,13 @@ $text: 16px; //設定文字尺寸的基礎值 單位 16px 或是 1rem(百分比)
 @mixin fwp {
 	flex-wrap: wrap;
 }
+// @mixin LBW($WM, $WA) {
+// 	$Logow: $WM * $WA;
+// 	$MBW: $W10 * 10 - $Logow
+// 	#Logo{
+// 		width: $Logow;
+// 	}
+// 	#Menu {
+// 		width: $MBW;
+// 	}
+// }
