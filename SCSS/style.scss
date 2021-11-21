@@ -5,3 +5,12 @@
 @media screen and (max-width: 576px) {
 	@import '_02Esmall/_02Esmall.scss';
 }
+@media screen and (min-width: 576px) {
+	@import '_03Lsmall/_03Lsmall.scss';
+}
+@media screen and (min-width: 768px) {
+	@import '_04Middle/_04Middle.scss';
+}
+@media screen and (min-width: 992px) {
+	@import '_05Lmiddle/_05Lmiddle.scss';
+}

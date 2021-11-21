@@ -13,11 +13,11 @@ vw: 可視區 (viewport) 的寬度 (px) ，除以 100 ，等於 1vw
 
 header {
 	nav {
-		display: flex;
 		// Nav 的寬度變數傳回
 		width: $NW;
-		color: cornflowerblue;
-		background-color: cornsilk;
+		height: $NH;
+		color: aqua;
+		//background-color: blue;
 
 		// 指向清單物件 li
 		li {
@@ -25,13 +25,13 @@ header {
 			// 缺點是會自動往上增加一層，如果上一層框架沒有設定高度，會被無視存在
 			// 除了增加高度，可以使用 clear:both 移除浮點
 			float: left;
-			background-color: aqua;
+			background-color: bisque;
 		}
 		.Clear {
 			clear: both;
 		}
 		#Logo {
-			background-color: blue;
+			background-color: brown;
 			// 寬度分成8等分
 			width: $W1 * 8 + 5%;
 			// 文字尺寸，內縮、水平置中
@@ -50,7 +50,7 @@ header {
 			@include BgText;
 			// 背景圖片連結
 			// background-image: url(../../images/icon/000001.svg);
-			// background-color: rgb(75, 72, 72);
+			background-color: rgb(75, 72, 72);
 		}
 
 		// 最上面只顯示 Logo 與 Menu，其餘不顯示
@@ -94,8 +94,10 @@ header {
 	}
 }
 #main {
-	background-color: chartreuse;
+	@include flx;
+	//flex-wrap: wrap;
+	background-color: cornflowerblue;
 	h1 {
-		background-color: coral;
+		background-color: blueviolet;
 	}
 }

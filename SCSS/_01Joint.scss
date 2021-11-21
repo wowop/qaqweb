@@ -46,3 +46,15 @@ $text: 16px; //設定文字尺寸的基礎值 單位 16px 或是 1rem(百分比)
 	// contain (背景圖片大於容器時，縮小至容器內呈現，會留邊界)
 	background-size: contain;
 }
+@mixin OB {
+	display: block;
+}
+@mixin ClearFloat {
+	clear: both;
+}
+@mixin flx {
+	display: flex;
+}
+@mixin fwp {
+	flex-wrap: wrap;
+}

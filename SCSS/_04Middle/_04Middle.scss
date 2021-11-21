@@ -16,8 +16,9 @@ header {
 		display: flex;
 		// Nav 的寬度變數傳回
 		width: $NW;
-		color: cornflowerblue;
-		background-color: cornsilk;
+		height: $NH;
+		color: aqua;
+		background-color: blue;
 
 		// 指向清單物件 li
 		li {
@@ -25,13 +26,13 @@ header {
 			// 缺點是會自動往上增加一層，如果上一層框架沒有設定高度，會被無視存在
 			// 除了增加高度，可以使用 clear:both 移除浮點
 			float: left;
-			background-color: aqua;
+			background-color: bisque;
 		}
 		.Clear {
 			clear: both;
 		}
 		#Logo {
-			background-color: blue;
+			background-color: brown;
 			// 寬度分成8等分
 			width: $W1 * 8 + 5%;
 			// 文字尺寸，內縮、水平置中
@@ -94,8 +95,8 @@ header {
 	}
 }
 #main {
-	background-color: chartreuse;
+	background-color: cornflowerblue;
 	h1 {
-		background-color: coral;
+		background-color: blueviolet;
 	}
 }
