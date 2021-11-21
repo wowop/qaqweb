@@ -53,6 +53,13 @@ vw: 可視區 (viewport) 的寬度 (px) ，除以 100 ，等於 1vw
   #main h1 {
     background-color: coral;
   }
+  footer nav ul {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: crimson;
+  }
 }
 
 @media screen and (min-width: 576px) {
