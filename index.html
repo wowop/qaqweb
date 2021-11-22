@@ -2,6 +2,7 @@
 <!--響應試網頁-->
 <!-- ctrl / -->
 <html lang="zh-tw">
+
 <head>
     <!--萬國語系-->>
     <meta charset="UTF-8">
@@ -11,47 +12,140 @@
     <title>QAQ購物車</title>
 </head>
 <!-- 行內語法背景顏色 -->
+
 <body>
     <!-- 響應試網頁 id(唯一 #)類別(class .) -->
     <!--頁首(固定)主內容(隨著標題變化)頁尾(固定)  -->
-    <!-- 導覽列 -->
+    <!-- 導覽列 nav-->
     <header>
-        <nav id="nav">
-            <li id="Logo">QAQ</li>
-            <li id="Leader">排行榜</li>
-            <li id="Free">限時免費</li>
-            <li id="Activity">活動專區</li>
-            <li id="Newbook">新書推薦</li>
-            <li id="Menu"><div>test</div>
-            <!-- 將圖片改文字輸出，樣式設定還是顯示圖；符合 SEO 用法；因為圖片可以水平置中，但無法垂直置中 -->  
-            <!-- <img src="images/icon/000001.svg" alt="選單" title="選單項目"> -->
-            </li>
+        <nav>
+            <!-- 導覽列標籤 nav  項目清單 ul li ；商標 標題1（h1） -->
+            <h1 id="Logo">QAQ</h1>
+            <!-- icon 區塊標籤div id:icon -->
+            <ul id="Icon">
+                <li class="login">登入</li>
+                <li class="Freesign">免費註冊</li>
+                <li class="Member">會員專區</li>
+                <li class="ShopingCar">儲值</li>
+            </ul>
+            <ul class="BtnBox">
+                <li>首頁</li>
+                <li>女生館</li>
+                <li>排行榜</li>
+                <li>限時免費</li>
+                <li>活動專區</li>
+                <li>新書推薦</li>
+
+                <li class="Fantasy">奇幻玄幻</li>
+                <ul class="FantasyBox">
+                    <li class="recommend">編輯推薦</li>
+                    <li class="news">作品最新動態</li>
+                </ul>
+                <li>武俠</li>
+                <ul>
+                    <li>編輯推薦</li>
+                    <li>作品最新動態</li>
+                </ul>
+                <li>都市</li>
+                <ul>
+                    <li>編輯推薦</li>
+                    <li>作品最新動態</li>
+                </ul>
+                <li>歷史</li>
+                <ul>
+                    <li>編輯推薦</li>
+                    <li>作品最新動態</li>
+                </ul>
+                <li>科幻</li>
+                <ul>
+                    <li>編輯推薦</li>
+                    <li>作品最新動態</li>
+                </ul>
+            </ul>
+            <!-- 手機版的選單按鈕 -->
+            <div id="MenuBtn">
+                <!-- 設定方法一：直接置入圖片 img ； alt 替代文字（圖片連結失效時）；title 提示文字（不重要圖片，可以不用設定）-->
+                <img src="images/icon/menu.svg" alt="QAQ選單" title="QAQ選單">
+            </div>
+            <!-- 清除浮動框架 p（段落）-->
             <p class="Clear"></p>
         </nav>
     </header>
     <!-- 內容 -->
     <!-- main標籤在舊IE無法使用，使用<div>並用id標籤解決，或是用<article>。-->
     <article id="main">
-        <article>
-            <h1>首頁</h1>
-        </article>
-        <article>
-            <h1>排行榜</h1>
-        </article>
-        <article>
-            <h1>關於我</h1>
-        </article>
-        <article>
-            <h1>限時免費</h1>
-        </article>
-        <article>
-            <h1>活動專區</h1>
+        <!-- 廣告區塊 div 命名 輪播功能用 javascript 命名建議用 ID選擇器； css3輪播功能 命名 ID選擇器或是 類別選擇器（class） -->
+        <div id="Banner">
+            <div class="LeftBtn">Banner按鈕</div>
+            <ul id="ImgBox">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <div class="RightBtn">按鈕</div>
+        </div>
+        <!-- 奇幻玄幻 -->
+        <article id="recommend">
+            <h1>編輯推薦</h1>
+            <!-- 區段 section  -->
+            <section class="RCover">
+                <p class="Images">小說封面</p>
+                <p class="RName">
+                <h3>小說名稱</h3>
+                <ul>
+                    <li class="Watchnow">馬上閱讀</li>
+                    <li class="More">看更多</li>
+                </ul>
+                </p>
+                <!-- 螢光標記 mark 刪除線 s -->
+                <p class="Brief">商品簡介，文字字數超過26個字數（ <mark>英文與阿拉伯數字為26個字數，中文為13個字數</mark> ），會利用 ...... 設計</p>
+                <ul>
+                    <li class="OriginalPrice">原價<span><s>1,000</s></span>元</li>
+                    <li class="BargainPrice">特價<span>800</span>元</li>
+                </ul>
+            </section>
+
+            <section class="RCover">
+                <p class="Images">小說封面</p>
+                <p class="RName">
+                <h3>小說名稱</h3>
+                <ul>
+                    <li class="Watchnow">馬上閱讀</li>
+                    <li class="More">看更多</li>
+                </ul>
+                </p>
+                <!-- 螢光標記 mark 刪除線 s -->
+                <p class="Brief">商品簡介，文字字數超過26個字數（ <mark>英文與阿拉伯數字為26個字數，中文為13個字數</mark> ），會利用 ...... 設計</p>
+                <ul>
+                    <li class="OriginalPrice">原價<span><s>1,000</s></span>元</li>
+                    <li class="BargainPrice">特價<span>800</span>元</li>
+                </ul>
+            </section>
+
+            <section class="RCover">
+                <p class="Images">小說封面</p>
+                <p class="RName">
+                <h3>小說名稱</h3>
+                <ul>
+                    <li class="Watchnow">馬上閱讀</li>
+                    <li class="More">看更多</li>
+                </ul>
+                </p>
+                <!-- 螢光標記 mark 刪除線 s -->
+                <p class="Brief">商品簡介，文字字數超過26個字數（ <mark>英文與阿拉伯數字為26個字數，中文為13個字數</mark> ），會利用 ...... 設計</p>
+                <ul>
+                    <li class="OriginalPrice">原價<span><s>1,000</s></span>元</li>
+                    <li class="BargainPrice">特價<span>800</span>元</li>
+                </ul>
+            </section>
         </article>
     </article>
     <!-- 頁尾 -->
     <footer>
         <hr>
-        <nav class = "SubNav">
+        <nav class="SubNav">
             <ul>
                 <li class="register">免費註冊</li>
                 <li class="beeline">|</li>
@@ -62,15 +156,20 @@
                 <li class="Terms">服務條款</li>
             </ul>
         </nav>
+
+        <!-- 擁有者資訊 聯絡資訊 建議瀏覽器解析度 瀏覽人數（比較少用，資料庫運作） 版權聲明 連結：隱私權政策 網站安全政策 服務條款 商品的次選單  -->
+        <!-- 段落標籤 p ；行內範圍 span（不會另外換行） -->
+        <p>QAQ版權宣告&copy;2020 - <span id="Year">2021</span></p>
+
+        <!-- 聯絡資訊 address 地址、客服電話、E-mail、LineID、FB、Google地圖 -->
         <address>
-            <li>聯絡電話</li>
-            <li>電子郵件</li>
-            <li>Line ID</li>
-            <li>Instagram</li>
+            <p class="Address">台北市</p>
+            <p class="Tel">0800-123456</p>
+            <p class="E-Mail">yourname@gmail.com</p>
+            <p class="LineID">LineID</p>
+            <p class="FB">FB</p>
         </address>
-        <h6>
-            網站版權作者所有
-        </h6>
     </footer>
 </body>
+
 </html>

@@ -1,0 +1,99 @@
+// 呼叫 html 標籤，例如： nav，稱作 類型選擇
+// 呼叫 id ，例如 <li id="test"></li>，id="test"，「#」ID選擇器；「#test」
+// 呼叫 class，class="test1"，「.」類別選擇器；「.test1」
+// scss 1.巢狀寫法 2.變數 $yourname（設定計算用的基礎值） 3.繼承 %yourname（css3語法相同，但能集中呈現）；呼叫方式 @extend %yourname
+
+// 傳統 css3 的寫法 隱藏
+// header {
+//     width: 100%;
+// }
+// address, #YudoIcon, .YudoBtnBox {
+//     display: none;
+// }
+// #MenuBtn {
+//     background-color: burlywood;
+// }
+
+// 目前使用的單位（數值）是 百分比（%）；網頁的固定單位--像素 px
+
+header {
+    // 寬度 100%;
+    width: $W10 * 10;
+    background-color: violet;
+    nav {
+        /* 
+        浮動對齊的問題 float
+        1. #YudoLogo 與.YudoBtnBox 物件的父框架 nav，無寬度
+        2. nav 的父框架 header ，高度消失（展開）
+        解決方式
+        1. nav 的父框架 header，給予高度；或是 nav 給予高度
+        2. 清除浮動狀態，由 nav 設定
+        3. 利用圖片高度撐開父框架的高
+        */
+        width: $W10 * 10;
+        // 設定高度 單位為 %（未給予基準值，所以無法計算出實際高度）
+        background-color: wheat;
+        // 解決方式二：清除浮動狀態，由 nav 設定 寫在 53行
+
+        // 單位不同無法計算，所以改為同一單位 vw
+        // 引入的程式，執行結果為 YudoLogo 與 MenuBtn 的寬度，所以要寫在父框架（nav）
+        @include LBW(8, 5vw);
+
+        // 靠左排列（與 MenuBtn 同一行）
+        #Logo {
+            // 寬度 % or vw（螢幕可視範圍高度的百分比）
+            // width: $W10 * 8 + 5%;
+            
+            float: left;
+            background-color: brown;
+        }
+        #Icon {
+            // 呼叫 混合函式
+            @include DN;
+        }
+        .BtnBox {
+            // 呼叫 混合函式
+            @include DN;
+        }
+        // 靠左排列（與 Logo 同一行）
+        #MenuBtn {
+            // 浮點對齊法：靠左對齊 float:left
+            float: left;
+        }
+        .Clear {
+            @include ClearFloat;
+        }
+    }
+}
+
+footer {
+    // 物件之的間距值 vh rem
+    margin-top: 2rem;
+
+    hr {
+        margin-bottom: 2rem;
+    }
+
+    // 手機版次導覽
+    nav {
+        margin-bottom: 2rem;
+
+        ul {
+            width: 90%;
+            // 彈性佈局
+            display: flex;
+            @include DNli;
+            background-color: thistle;
+        }
+    }
+
+    // 版權宣告
+    p {
+        text-align: center;
+        margin-bottom: 0.7rem;
+    }
+    address {
+        //呼叫 混合函式
+        @include DN;
+    }
+}

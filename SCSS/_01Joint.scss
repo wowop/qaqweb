@@ -1,71 +1,71 @@
-// 頁面 (瀏覽器) 與物件的間距 ; 外兼具 -- 上下為0，左右自動 ; 內間距上下左右為0 ; 設定在(*) (總管)
-//https://github.com/yin-ying
-$W10: 100%; //100%的值
-
+// 頁面（瀏覽器）與物件的間距：外間距--上下為0，左右自動；內間距上下左右為0；設定在 「*」（通用選擇器）
 * {
-	// 外間距 -- 上下為0 ; 左右自動 margin ; 若物件寬度小於 100% 時 ， 物件將會自動 垂直 置中
-	margin: 0 auto;
-	// 內間距 -- 上下左右為0 Padding
-	padding: 0;
-	// 隱藏項目符號
-	list-style-type: none;
+    // 外間距--上下為0，左右自動 margin；若物件寬度小於 100% 時，物件將會自動 垂直 置中
+    margin: 0 auto;
+    // 內間距上下左右為0 padding
+    padding: 0;
+}
+// 圖片等比控制
+img {
+    // 寬度為 100%；高度自動
+    width: 100%;
+    height: auto;
 }
 
 // 變數區
-$NW: 100%; // 導覽列的寬 (Nav 的  Width)
-$NH: 65px; //導覽列的高
-$W1: $W10 / 10 * 1;
-$W2: $W10 / 10 * 2;
-$W3: $W10 / 10 * 3;
-$W4: $W10 / 10 * 4;
-$W5: $W10 / 10 * 5;
-$W6: $W10 / 10 * 6;
-$W7: $W10 / 10 * 7;
-$W8: $W10 / 10 * 8;
-$W9: $W10 / 10 * 9;
-$text: 16px; //設定文字尺寸的基礎值 單位 16px 或是 1rem(百分比)
+$W10: 10vw;
 
-// scss 繼承語法
-// 繼承區 無法直接撰寫在共用區呼叫；也無法與 mixin 混和函式共用
-%Dn {
-	display: none;
+// 繼承區（相同樣式）；將 scss 的繼承功能，寫在共用檔內，因為位置編排有誤，故造成 編譯 時出錯
+/* 
+You may not @extend an outer selector from within @media.
+You may only @extend selectors within the same directive.
+無法由 @media（媒體判斷）去呼叫「外部連結檔」
+*/
+%DN {
+    // 隱藏
+    display: none;
 }
 
-// MIXIN 混和模式
+// 計算區
+// 計算 header Logo 與 MenuBtn 之間的寬度 手機裝置
+@mixin LBW($WM, $WA) {
+    // 計算區 1.設變數（承載值的物件名稱）$WM=倍數 $WA=加的數值
+    $LogoW: $W10 * $WM + $WA;
+    //  MenuBtn寬度 = 父框架的總寬度（100） - Logo寬度（85）
+    $MBW: $W10 * 10 - $LogoW;
+
+
+    // 連動 計算寬度 Logo 與 MenuBtn
+
+    // 呼叫 id (標籤 或 id class)
+    #Logo {
+        // 寬度
+        width: $LogoW;
+    }
+    #MenuBtn {
+        //  寬度
+        width: $MBW;
+    }
+}
+
+// 撰寫 scss 的「混合函式 mixin」，修正 scss 的繼承功能，無法被 @media 使用的問題
 @mixin DN {
-	display: none;
+    display: none;
 }
 
-@mixin BgText {
-	// 將文字移至裝置外
-	text-indent: -99999px;
-	// 背景圖片對齊 (定位點)
-	background-position: center;
-	// 背景圖片取消重複顯示
-	background-repeat: no-repeat;
-	// 背景圖片尺寸 auto自動 cover符合框架尺寸 (背景圖片小於容器時，放大圖片製容器的大小並填滿；背景圖片大於容器時，縮小圖片至容器大小並填滿；缺點，容器的長寬比例不合時，會出現背景圖片失真)
-	// contain (背景圖片大於容器時，縮小至容器內呈現，會留邊界)
-	background-size: contain;
-}
+// 開啟隱藏物件
 @mixin OB {
-	display: block;
+    // 顯示方式：區塊
+    display: block;
 }
+
+// 清除浮動 float
 @mixin ClearFloat {
-	clear: both;
+    // 清除左右浮動
+    clear: both;
 }
-@mixin flx {
-	display: flex;
+
+// 隱藏項目符號
+@mixin DNli {
+    list-style-type: none;
 }
-@mixin fwp {
-	flex-wrap: wrap;
-}
-// @mixin LBW($WM, $WA) {
-// 	$Logow: $WM * $WA;
-// 	$MBW: $W10 * 10 - $Logow
-// 	#Logo{
-// 		width: $Logow;
-// 	}
-// 	#Menu {
-// 		width: $MBW;
-// 	}
-// }

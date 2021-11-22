@@ -1,0 +1,11 @@
+header {
+    width: $W10 * 10;
+    background-color: rgb(205, 50, 102);
+}
+
+footer {
+    address {
+        //呼叫 混合函式
+        @include DN;
+    }
+}

@@ -1,0 +1,58 @@
+// 呼叫 html 標籤，例如： nav，稱作 類型選擇
+// 呼叫 id ，例如 <li id="test"></li>，id="test"，「#」ID選擇器；「#test」
+// 呼叫 class，class="test1"，「.」類別選擇器；「.test1」
+// scss 1.巢狀寫法 2.變數 $yourname（設定計算用的基礎值） 3.繼承 %yourname（css3語法相同，但能集中呈現）；呼叫方式 @extend %yourname
+
+// 目前使用的單位（數值）是 百分比（%）；網頁的固定單位--像素 px
+
+header {
+    // 寬度 100%;
+    width: $W10 * 10;
+    background-color: violet;
+    nav {
+        /* 
+        浮動對齊的問題 float
+        1. #YudoLogo 與.YudoBtnBox 物件的父框架 nav，無寬度
+        2. nav 的父框架 header ，高度消失（展開）
+        解決方式
+        1. nav 的父框架 header，給予高度；或是 nav 給予高度
+        2. 清除浮動狀態，由 nav 設定
+        3. 利用圖片高度撐開父框架的高
+        */
+        width: $W10 * 10;
+        // 設定高度 單位為 %（未給予基準值，所以無法計算出實際高度）
+        background-color: rgb(199, 179, 245);
+        // 解決方式二：清除浮動狀態，由 nav 設定 寫在 53行
+
+        // 靠左排列（與 MenuBtn 同一行）
+        #Logo {
+            // 寬度 向下相容；讀取 03Small 設定值
+            float: left;
+            background-color: yellowgreen;
+        }
+        #Icon {
+            // 呼叫 混合函式
+            @include DN;
+        }
+        .BtnBox {
+            // 呼叫 混合函式
+            @include DN;
+        }
+        // 靠左排列（與 Logo 同一行）
+        #MenuBtn {
+            // 寬度 向下相容；讀取 03Small 設定值
+            // 浮點對齊法：靠左對齊 float:left
+            float: left;
+        }
+        .Clear {
+            @include ClearFloat;
+        }
+    }
+}
+
+footer {
+    address {
+        //呼叫 混合函式
+        @include DN;
+    }
+}

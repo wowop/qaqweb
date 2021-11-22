@@ -2,182 +2,230 @@
 * {
   margin: 0 auto;
   padding: 0;
-  list-style-type: none;
 }
 
-@media screen and (max-width: 576px) {
-  /*
-vh: 可視區 (viewport) 的高度 (px) ，除以 100 ，等於 1vh
-vw: 可視區 (viewport) 的寬度 (px) ，除以 100 ，等於 1vw
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* 
+You may not @extend an outer selector from within @media.
+You may only @extend selectors within the same directive.
+無法由 @media（媒體判斷）去呼叫「外部連結檔」
 */
-  header nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    color: cornflowerblue;
-    background-color: cornsilk;
+@media screen and (max-width: 576px) {
+  header {
+    width: 100vw;
+    background-color: violet;
   }
-  header nav li {
+  header nav {
+    /* 
+        浮動對齊的問題 float
+        1. #YudoLogo 與.YudoBtnBox 物件的父框架 nav，無寬度
+        2. nav 的父框架 header ，高度消失（展開）
+        解決方式
+        1. nav 的父框架 header，給予高度；或是 nav 給予高度
+        2. 清除浮動狀態，由 nav 設定
+        3. 利用圖片高度撐開父框架的高
+        */
+    width: 100vw;
+    background-color: wheat;
+  }
+  header nav #Logo {
+    width: 85vw;
+  }
+  header nav #MenuBtn {
+    width: 15vw;
+  }
+  header nav #Logo {
     float: left;
-    background-color: aqua;
+    background-color: brown;
+  }
+  header nav #Icon {
+    display: none;
+  }
+  header nav .BtnBox {
+    display: none;
+  }
+  header nav #MenuBtn {
+    float: left;
   }
   header nav .Clear {
     clear: both;
   }
-  header nav #Logo {
-    background-color: blue;
-    width: 85%;
-    font-size: 32px;
-    text-indent: 30px;
-    line-height: 65px;
+  footer {
+    margin-top: 2rem;
   }
-  header nav #Menu {
-    width: 15%;
-    text-align: center;
-    line-height: 65px;
-    text-indent: -99999px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+  footer hr {
+    margin-bottom: 2rem;
   }
-  header nav #Leader,
-  header nav #Free,
-  header nav #Activity,
-  header nav #Newbook {
-    display: none;
-  }
-  #main {
-    background-color: chartreuse;
-  }
-  #main h1 {
-    background-color: coral;
+  footer nav {
+    margin-bottom: 2rem;
   }
   footer nav ul {
-    width: 80%;
+    width: 90%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background-color: crimson;
+    list-style-type: none;
+    background-color: thistle;
+  }
+  footer p {
+    text-align: center;
+    margin-bottom: 0.7rem;
+  }
+  footer address {
+    display: none;
   }
 }
 
 @media screen and (min-width: 576px) {
-  footer, nav {
-    display: none;
-  }
   header {
-    width: 1000%;
+    width: 100vw;
+    background-color: violet;
   }
-  header nav #noritakaLogo {
-    display: none;
-  }
-  header nav .noritakaLogo {
-    display: none;
-  }
-  header nav .noritakaSubNav ul {
-    background-color: antiquewhite;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  /*
-vh: 可視區 (viewport) 的高度 (px) ，除以 100 ，等於 1vh
-vw: 可視區 (viewport) 的寬度 (px) ，除以 100 ，等於 1vw
-*/
   header nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    height: 65px;
-    color: aqua;
-    background-color: blue;
+    /* 
+        浮動對齊的問題 float
+        1. #YudoLogo 與.YudoBtnBox 物件的父框架 nav，無寬度
+        2. nav 的父框架 header ，高度消失（展開）
+        解決方式
+        1. nav 的父框架 header，給予高度；或是 nav 給予高度
+        2. 清除浮動狀態，由 nav 設定
+        3. 利用圖片高度撐開父框架的高
+        */
+    width: 100vw;
+    background-color: #b3f5be;
   }
-  header nav li {
+  header nav #Logo {
+    width: 85vw;
+  }
+  header nav #MenuBtn {
+    width: 15vw;
+  }
+  header nav #Logo {
     float: left;
-    background-color: bisque;
+    background-color: palevioletred;
+  }
+  header nav #Icon {
+    display: none;
+  }
+  header nav .BtnBox {
+    display: none;
+  }
+  header nav #MenuBtn {
+    float: left;
   }
   header nav .Clear {
     clear: both;
   }
-  header nav #Logo {
-    background-color: brown;
-    width: 85%;
-    font-size: 32px;
-    text-indent: 30px;
-    line-height: 65px;
-  }
-  header nav #Menu {
-    width: 15%;
-    text-align: center;
-    line-height: 65px;
-    text-indent: -99999px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-  header nav #Leader,
-  header nav #Free,
-  header nav #Activity,
-  header nav #Newbook {
+  footer address {
     display: none;
   }
-  #main {
-    background-color: cornflowerblue;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    width: 100vw;
+    background-color: violet;
   }
-  #main h1 {
-    background-color: blueviolet;
+  header nav {
+    /* 
+        浮動對齊的問題 float
+        1. #YudoLogo 與.YudoBtnBox 物件的父框架 nav，無寬度
+        2. nav 的父框架 header ，高度消失（展開）
+        解決方式
+        1. nav 的父框架 header，給予高度；或是 nav 給予高度
+        2. 清除浮動狀態，由 nav 設定
+        3. 利用圖片高度撐開父框架的高
+        */
+    width: 100vw;
+    background-color: #c7b3f5;
+  }
+  header nav #Logo {
+    float: left;
+    background-color: yellowgreen;
+  }
+  header nav #Icon {
+    display: none;
+  }
+  header nav .BtnBox {
+    display: none;
+  }
+  header nav #MenuBtn {
+    float: left;
+  }
+  header nav .Clear {
+    clear: both;
+  }
+  footer address {
+    display: none;
   }
 }
 
 @media screen and (min-width: 992px) {
   /*
-vh: 可視區 (viewport) 的高度 (px) ，除以 100 ，等於 1vh
-vw: 可視區 (viewport) 的寬度 (px) ，除以 100 ，等於 1vw
+大平版裝置的 Icon 與 BtnBox取消「隱藏顯示」，但無法讀取。
+因為，媒體判斷的順序是由 小尺寸語法 至 大尺寸，故 大尺寸 沒有下達任何語法時，會直接直判讀至小尺寸
 */
+  header {
+    width: 100vw;
+    background-color: yellowgreen;
+  }
   header nav {
-    width: 100%;
-    height: 65px;
-    color: aqua;
-  }
-  header nav li {
-    float: left;
-    background-color: bisque;
-  }
-  header nav .Clear {
-    clear: both;
-  }
-  header nav #Logo {
-    background-color: brown;
-    width: 85%;
-    font-size: 32px;
-    text-indent: 30px;
-    line-height: 65px;
-  }
-  header nav #Menu {
-    width: 15%;
-    text-align: center;
-    line-height: 65px;
-    text-indent: -99999px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: #4b4848;
-  }
-  header nav #Leader,
-  header nav #Free,
-  header nav #Activity,
-  header nav #Newbook {
-    display: none;
-  }
-  #main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background-color: cornflowerblue;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
-  #main h1 {
-    background-color: blueviolet;
+  header nav #Logo {
+    width: 70vw;
+  }
+  header nav #Icon {
+    display: block;
+    width: 30vw;
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header nav .BtnBox {
+    display: block;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style-type: none;
+  }
+  header nav .BtnBox ul {
+    display: none;
+  }
+  header nav #MenuBtn {
+    display: none;
+  }
+  footer address {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    width: 100vw;
+    background-color: #4e32cd;
+  }
+  footer address {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  header {
+    width: 100vw;
+    background-color: #cd3266;
+  }
+  footer address {
+    display: none;
   }
 }
