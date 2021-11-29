@@ -54,6 +54,29 @@ header {
 }
 
 footer {
+        // 物件之的間距值 vh rem
+        margin-top: 2rem;
+
+        hr {
+            margin-bottom: 2rem;
+        }
+    
+        // 手機版次導覽
+        nav {
+            margin-bottom: 2rem;
+    
+            ul {
+                width: 90%;
+                // 彈性佈局
+                display: flex;
+                @include DNli;
+                background-color: rgb(123, 143, 155);
+            }
+    // 版權宣告
+    p {
+        text-align: center;
+        margin-bottom: 0.7rem;
+    }
     address {
         //呼叫 混合函式
         @include DN;

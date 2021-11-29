@@ -1,0 +1,67 @@
+#Main {
+    width: $W10 * 10;
+    background-color: burlywood;
+
+    #Banner {
+        width: $W10 * 10;
+        // 溢位設定，將超出的可視範圍給隱藏
+        overflow: hidden;
+        // 定位點：相對定位
+        position: relative;
+        .Btn {
+            width: 30px;
+            height: 6vh * 2;
+            // 水平置中
+            text-align: center;
+            // 垂直置中 高度 = 行距
+            line-height: 6vh * 2;
+            font-size: $Trem * 2;
+            // 定位點
+            position: absolute;
+            // 移動階層（圖層）
+            z-index: 15;
+            top: 20vh - 6vh;
+        }
+        .LeftBtn {
+            left: 2.5vw;
+            background-color: chocolate;
+        }
+        .RightBtn {
+            // 方向 右邊為0（物件靠右對齊）；float 浮點對齊，配合 上下左右 方向推動
+            right: 2.5vw;
+            background-color: crimson;
+        }
+
+        #ImgBox {
+            width: $W10 * 10;
+            @include DNli;
+            // 內間距 設定 下方間距，當成圖片的高度，單位為 % or vh
+            padding-bottom: 40vh;
+            background-color: cadetblue;
+            li {
+                width: $W10 * 10;
+                float: left;
+                // 定位點 絕對定位；1. 單獨呼叫時，原點（0,0）會位於畫面（可視範圍）的左上角
+                // 2. 物件的父框架呼叫 相對定位（position: relative）時，功能設為「重新定位原點至父框架
+                position: absolute;
+                // 移動圖片位置；因為 不手機會有不同的中心位置，無法逐一計算，所以要利用 背景圖片 的方式修改
+                // margin-left: -235px;
+                font-size: 72px;
+                text-align: center;
+                // 內間距 設定 下方間距，當成圖片的高度，單位為 % or vh
+                padding-bottom: 26vh;
+            }
+            .Item01 {
+                width: $W10 * 10;
+                // 背景圖片
+                background-image: url(../../images/Banner/001.jpg);
+                // 不重覆
+                background-repeat: no-repeat;
+                // 背景圖片 置中對齊
+                background-position: center;
+                // 背景圖片尺寸
+                background-size: cover;
+            }
+        }
+    }
+}

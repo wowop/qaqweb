@@ -14,6 +14,11 @@ You may not @extend an outer selector from within @media.
 You may only @extend selectors within the same directive.
 無法由 @media（媒體判斷）去呼叫「外部連結檔」
 */
+/* 
+You may not @extend an outer selector from within @media.
+You may only @extend selectors within the same directive.
+無法由 @media（媒體判斷）去呼叫「外部連結檔」
+*/
 @media screen and (max-width: 576px) {
   header {
     width: 100vw;
@@ -77,6 +82,54 @@ You may only @extend selectors within the same directive.
   }
   footer address {
     display: none;
+  }
+  #Main {
+    width: 100vw;
+    background-color: burlywood;
+  }
+  #Main #Banner {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+  }
+  #Main #Banner .Btn {
+    width: 30px;
+    height: 12vh;
+    text-align: center;
+    line-height: 12vh;
+    font-size: 2rem;
+    position: absolute;
+    z-index: 15;
+    top: 14vh;
+  }
+  #Main #Banner .LeftBtn {
+    left: 2.5vw;
+    background-color: chocolate;
+  }
+  #Main #Banner .RightBtn {
+    right: 2.5vw;
+    background-color: crimson;
+  }
+  #Main #Banner #ImgBox {
+    width: 100vw;
+    list-style-type: none;
+    padding-bottom: 40vh;
+    background-color: cadetblue;
+  }
+  #Main #Banner #ImgBox li {
+    width: 100vw;
+    float: left;
+    position: absolute;
+    font-size: 72px;
+    text-align: center;
+    padding-bottom: 26vh;
+  }
+  #Main #Banner #ImgBox .Item01 {
+    width: 100vw;
+    background-image: url(../../images/Banner/001.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }
 
