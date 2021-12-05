@@ -1,15 +1,15 @@
 // 頁面（瀏覽器）與物件的間距：外間距--上下為0，左右自動；內間距上下左右為0；設定在 「*」（通用選擇器）
 * {
-    // 外間距--上下為0，左右自動 margin；若物件寬度小於 100% 時，物件將會自動 垂直 置中
-    margin: 0 auto;
-    // 內間距上下左右為0 padding
-    padding: 0;
+	// 外間距--上下為0，左右自動 margin；若物件寬度小於 100% 時，物件將會自動 垂直 置中
+	margin: 0 auto;
+	// 內間距上下左右為0 padding
+	padding: 0;
 }
 // 圖片等比控制
 img {
-    // 寬度為 100%；高度自動
-    width: 100%;
-    height: auto;
+	// 寬度為 100%；高度自動
+	width: 100%;
+	height: auto;
 }
 
 // 變數區
@@ -28,50 +28,70 @@ You may only @extend selectors within the same directive.
 無法由 @media（媒體判斷）去呼叫「外部連結檔」
 */
 %DN {
-    // 隱藏
-    display: none;
+	// 隱藏
+	display: none;
 }
 
 // 計算區
 // 計算 header Logo 與 MenuBtn 之間的寬度 手機裝置
 @mixin LBW($WM, $WA) {
-    // 計算區 1.設變數（承載值的物件名稱）$WM=倍數 $WA=加的數值
-    $LogoW: $W10 * $WM + $WA;
-    //  MenuBtn寬度 = 父框架的總寬度（100） - Logo寬度（85）
-    $MBW: $W10 * 10 - $LogoW;
+	// 計算區 1.設變數（承載值的物件名稱）$WM=倍數 $WA=加的數值
+	$LogoW: $W10 * $WM + $WA;
+	//  MenuBtn寬度 = 父框架的總寬度（100） - Logo寬度（85）
+	$MBW: $W10 * 10 - $LogoW;
 
+	// 連動 計算寬度 Logo 與 MenuBtn
 
-    // 連動 計算寬度 Logo 與 MenuBtn
-
-    // 呼叫 id (標籤 或 id class)
-    #Logo {
-        // 寬度
-        width: $LogoW;
-    }
-    #MenuBtn {
-        //  寬度
-        width: $MBW;
-    }
+	// 呼叫 id (標籤 或 id class)
+	#Logo {
+		// 寬度
+		width: $LogoW;
+	}
+	#MenuBtn {
+		//  寬度
+		width: $MBW;
+	}
 }
 
 // 撰寫 scss 的「混合函式 mixin」，修正 scss 的繼承功能，無法被 @media 使用的問題
 @mixin DN {
-    display: none;
+	display: none;
 }
 
 // 開啟隱藏物件
 @mixin OB {
-    // 顯示方式：區塊
-    display: block;
+	// 顯示方式：區塊
+	display: block;
 }
 
 // 清除浮動 float
 @mixin ClearFloat {
-    // 清除左右浮動
-    clear: both;
+	// 清除左右浮動
+	clear: both;
 }
 
 // 隱藏項目符號
 @mixin DNli {
-    list-style-type: none;
+	list-style-type: none;
+}
+// 商品 廣告背景圖片語法
+@mixin BPhoto($PosiTion, $Size, $Material, $Image) {
+	// 變數設定 1.對齊 $PosiTion 2.尺寸 $Size 3.資料夾位置$Material ; 圖片 $Image
+	// 問題:路徑無法直接讀取變數名稱
+	// 解答:scss提供的語法,插值寫法(基於 javascript 的 es6 語法) , #{自訂名稱(只能英文和數字)},例如:#{Image},寫在路徑上
+	width: $W10*10;
+	// 不重複
+	background-repeat: no-repeat;
+	// 背景圖片 置中對齊
+	background-position: $PosiTion;
+	// 背景圖片尺寸
+	background-size: $Size;
+	// 背景圖片
+	background-image: url(../../images/#{$Material}/#{$Image});
+}
+
+// 圓角矩形
+@mixin Rounded($Num) {
+	// 邊框角度設定,建議單位為 像素
+	border-radius: $Num;
 }

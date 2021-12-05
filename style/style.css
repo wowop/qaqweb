@@ -10,9 +10,8 @@ img {
 }
 
 /* 
-You may not @extend an outer selector from within @media.
-You may only @extend selectors within the same directive.
-無法由 @media（媒體判斷）去呼叫「外部連結檔」
+文字尺寸 單位 px（固定值） em（百分比，會疊加父框架設定的值） rem（百分比，不會疊加父框架設定的值）
+em 基礎為 1em = 16px ；rem 基礎為 1rem = 16px
 */
 /* 
 You may not @extend an outer selector from within @media.
@@ -97,18 +96,20 @@ You may only @extend selectors within the same directive.
     height: 12vh;
     text-align: center;
     line-height: 12vh;
-    font-size: 2rem;
+    font-size: 1.2rem;
     position: absolute;
     z-index: 15;
     top: 14vh;
   }
   #Main #Banner .LeftBtn {
     left: 2.5vw;
-    background-color: chocolate;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
   }
   #Main #Banner .RightBtn {
     right: 2.5vw;
-    background-color: crimson;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
   }
   #Main #Banner #ImgBox {
     width: 100vw;
@@ -126,10 +127,38 @@ You may only @extend selectors within the same directive.
   }
   #Main #Banner #ImgBox .Item01 {
     width: 100vw;
-    background-image: url(../../images/Banner/001.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-image: url(../../images/Banner/001.jpg);
+  }
+  #Main #Banner #ImgBox .Item02 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/002.jpg);
+  }
+  #Main #Banner #ImgBox .Item03 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/003.jpg);
+  }
+  #Main #Banner #ImgBox .Item04 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/004.jpg);
+  }
+  #Main #Banner #ImgBox .Item05 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/005.jpg);
   }
 }
 
@@ -173,8 +202,107 @@ You may only @extend selectors within the same directive.
   header nav .Clear {
     clear: both;
   }
-  footer address {
+  footer {
+    margin-top: 2rem;
+  }
+  footer hr {
+    margin-bottom: 2rem;
+  }
+  footer nav {
+    margin-bottom: 2rem;
+  }
+  footer nav ul {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style-type: none;
+    background-color: #7b8f9b;
+  }
+  footer nav p {
+    text-align: center;
+    margin-bottom: 0.7rem;
+  }
+  footer nav address {
     display: none;
+  }
+  #Main {
+    width: 100vw;
+    background-color: burlywood;
+  }
+  #Main #Banner {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+  }
+  #Main #Banner .Btn {
+    width: 30px;
+    height: 12vh;
+    text-align: center;
+    line-height: 12vh;
+    font-size: 1.2rem;
+    position: absolute;
+    z-index: 15;
+    top: 14vh;
+  }
+  #Main #Banner .LeftBtn {
+    left: 2.5vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+  }
+  #Main #Banner .RightBtn {
+    right: 2.5vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+  }
+  #Main #Banner #ImgBox {
+    width: 100vw;
+    list-style-type: none;
+    padding-bottom: 38vh;
+    background-color: cadetblue;
+  }
+  #Main #Banner #ImgBox li {
+    width: 100vw;
+    float: left;
+    position: absolute;
+    font-size: 72px;
+    text-align: center;
+    padding-bottom: 26vh;
+  }
+  #Main #Banner #ImgBox .Item01 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/001.jpg);
+  }
+  #Main #Banner #ImgBox .Item02 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/002.jpg);
+  }
+  #Main #Banner #ImgBox .Item03 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/003.jpg);
+  }
+  #Main #Banner #ImgBox .Item04 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/004.jpg);
+  }
+  #Main #Banner #ImgBox .Item05 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/005.jpg);
   }
 }
 
@@ -214,6 +342,84 @@ You may only @extend selectors within the same directive.
   }
   footer address {
     display: none;
+  }
+  #Main {
+    width: 100vw;
+    background-color: burlywood;
+  }
+  #Main #Banner {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+  }
+  #Main #Banner .Btn {
+    width: 30px;
+    height: 12vh;
+    text-align: center;
+    line-height: 12vh;
+    font-size: 1.2rem;
+    position: absolute;
+    z-index: 15;
+    top: 14vh;
+  }
+  #Main #Banner .LeftBtn {
+    left: 2.5vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+  }
+  #Main #Banner .RightBtn {
+    right: 2.5vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+  }
+  #Main #Banner #ImgBox {
+    width: 100vw;
+    list-style-type: none;
+    padding-bottom: 39vh;
+    background-color: cadetblue;
+  }
+  #Main #Banner #ImgBox li {
+    width: 100vw;
+    float: left;
+    position: absolute;
+    font-size: 72px;
+    text-align: center;
+    padding-bottom: 26vh;
+  }
+  #Main #Banner #ImgBox .Item01 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/001.jpg);
+  }
+  #Main #Banner #ImgBox .Item02 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/002.jpg);
+  }
+  #Main #Banner #ImgBox .Item03 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/003.jpg);
+  }
+  #Main #Banner #ImgBox .Item04 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/004.jpg);
+  }
+  #Main #Banner #ImgBox .Item05 {
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/Banner/005.jpg);
   }
 }
 
