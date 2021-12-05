@@ -90,6 +90,17 @@ You may only @extend selectors within the same directive.
 	background-image: url(../../images/#{$Material}/#{$Image});
 }
 
+@mixin Phone($PosiTion, $Size, $Material, $Image) {
+	// 不重複
+	background-repeat: no-repeat;
+	// 背景圖片 置中對齊
+	background-position: $PosiTion;
+	// 背景圖片尺寸
+	background-size: $Size;
+	// 背景圖片
+	background-image: url(../../images/#{$Material}/#{$Image});
+}
+
 // 圓角矩形
 @mixin Rounded($Num) {
 	// 邊框角度設定,建議單位為 像素
