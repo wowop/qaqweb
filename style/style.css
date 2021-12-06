@@ -53,10 +53,9 @@ You may only @extend selectors within the same directive.
     display: none;
   }
   header nav #MenuBtn {
-    float: left;
-  }
-  header nav #MenuBtn img {
     height: 60px;
+    float: left;
+    background-color: aquamarine;
     text-indent: -9999px;
     background-repeat: no-repeat;
     background-position: center;
@@ -112,7 +111,7 @@ You may only @extend selectors within the same directive.
   #Main #Banner .LeftBtn {
     left: 2.5vw;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
+    border-radius: 15pxpx;
   }
   #Main #Banner .RightBtn {
     right: 2.5vw;
@@ -256,12 +255,12 @@ You may only @extend selectors within the same directive.
   #Main #Banner .LeftBtn {
     left: 2.5vw;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
+    border-radius: 15pxpx;
   }
   #Main #Banner .RightBtn {
     right: 2.5vw;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
+    border-radius: 15pxpx;
   }
   #Main #Banner #ImgBox {
     width: 100vw;

@@ -43,7 +43,6 @@ header {
 		#Logo {
 			// 寬度 % or vw（螢幕可視範圍高度的百分比）
 			// width: $W10 * 8 + 5%;
-
 			float: left;
 			background-color: brown;
 		}
@@ -58,16 +57,12 @@ header {
 		// 靠左排列（與 Logo 同一行）
 		#MenuBtn {
 			// 浮點對齊法：靠左對齊 float:left
+			height: 60px;
 			float: left;
-			img {
-				height: 60px;
-				// 固定MenuBtn img大小的值
-				// width: 50px;
-				// height: 50px;
-				// 用文字替代圖片,呈現背景圖片
-				text-indent: -9999px;
-				@include Phone(center, contain, icon, "menu.svg");
-			}
+            background-color: aquamarine;
+            // 文字取代圖片，呈現背景圖，而隱藏文字；首行縮排
+            text-indent: -9999px;
+            @include Phone(center, contain, icon, "menu.svg");
 		}
 		.Clear {
 			@include ClearFloat;

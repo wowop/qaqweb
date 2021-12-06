@@ -23,7 +23,7 @@
 			position: absolute;
 			// 移動階層（圖層）
 			z-index: 15;
-			// 左右按鈕,向下推算物件高度(物件父框架的高/2)-(按鈕高度/2)+單位
+			// 左右按鈕，物件往下推算高度；(物件的父框架的高 / 2) - (按鈕高度 / 2) + 單位
 			top: ($Imgpadding/2)-(95px/2);
 		}
 		.LeftBtn {
@@ -35,7 +35,7 @@
 			// 方向 右邊為0（物件靠右對齊）；float 浮點對齊，配合 上下左右 方向推動
 			right: 2.5vw;
 			background-color: rgba(255, 255, 255, 0.2);
-			@include Rounded(15px);
+			@include Rounded(15);
 		}
 
 		#ImgBox {

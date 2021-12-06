@@ -104,5 +104,5 @@ You may only @extend selectors within the same directive.
 // 圓角矩形
 @mixin Rounded($Num) {
 	// 邊框角度設定,建議單位為 像素
-	border-radius: $Num;
+	border-radius: $Num+px;
 }
